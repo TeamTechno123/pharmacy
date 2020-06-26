@@ -57,7 +57,7 @@ p{
   display: flex;
   align-items: center;
 }
-
+/* bg-Green, text-white, rounded */
 .btn1{
   border-radius: 15px;
   background-color: #00ff49;
@@ -67,6 +67,7 @@ p{
   font-weight: 800;
   /* width: 200px; */
 }
+
 .btn2{
   background-color: #161d63;
   border-color: #161d63;
@@ -94,9 +95,29 @@ p{
   font-weight: 800;
   /* width: 200px; */
 }
+/* bg-Green, text-white, rounded */
+.btn5{
+  border-radius: 25px;
+  background-color: #fff;
+  border-color: #666;
+  box-shadow: none !important;
+  color:#666;
+  font-weight: 800;
+  /* width: 200px; */
+}
+
+.bg_gray{
+  background-color: #f3f3f3;
+}
+.bg_violet{
+  background-color: #161d63;
+}
 
 .para_text{
   color: #888888;
+}
+.text_gray{
+  color: #555;
 }
 .sec_shadow{
   -moz-box-shadow: 0 0 5px 5px #888;
@@ -324,6 +345,27 @@ p{
     top: -108px;
     width: 40%;
 }
+
+.featured_package{
+  margin-top: -70px;
+}
+.fetured_buttons{
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.fetured_buttons2{
+  display: inline-block;
+}
+.featured_package .package_box{
+  border-radius: 10px !important;
+}
+.lab_partners_testimonial .partner_box{
+  border-radius: 10px !important;
+}
+
+
+
 
 /* Footer */
 footer{

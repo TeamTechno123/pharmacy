@@ -74,7 +74,7 @@
   <script src="<?php echo base_url(); ?>assets/js/owl.carousel.min.js"></script>
 
     <script type="text/javascript">
-            $('.owl_carousel_js').owlCarousel({
+          $('.owl_carousel_js').owlCarousel({
           loop:true,
           margin:10,
           navText:["<div class='nav-btn prev-slide'> < </div>","<div class='nav-btn next-slide'> > </div>"],
@@ -115,6 +115,27 @@
           },
           1000:{
               items:2
+          }
+      }
+    })
+    $('.owl_carousel_testimonial').owlCarousel({
+      loop:true,
+      margin:10,
+      navText:["<div class='nav-btn prev-slide'> < </div>","<div class='nav-btn next-slide'> > </div>"],
+      nav:true,
+      dots: false,
+      autoplay:true,
+      autoplayTimeout:3000,
+      autoplayHoverPause:true,
+      responsive:{
+          0:{
+              items:1
+          },
+          600:{
+              items:1
+          },
+          1000:{
+              items:1
           }
       }
     })

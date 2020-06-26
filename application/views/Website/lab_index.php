@@ -77,122 +77,221 @@
     </div>
   </section>
 
-
-
-
-
-
-
-  <!-- <section class="home_service_strip">
-    <div class="container">
-      <div class="row service_strip">
-        <div class="col-md-2 py-5 px-1 text-center text-white">
-          <div class="box border_right py-3">
-            <i class="fa fa-list f-22"></i>
-            <p class="f-12 m-0">Chat With Doctor</p>
+  <section class="px-3 bg_gray pb-5 featured_package">
+    <h2 class="title2 mb-3">Featured Packages</h2>
+    <div class="fetured_buttons py-3">
+        <div class='fetured_buttons2 px-2'>
+            <button type="button" class="btn btn-outline-primary btn5 px-4 py-2 f-18"> Popular Packages</button>
+        </div>
+        <div class='fetured_buttons2'>
+            <button type="button" class="btn btn-outline-primary btn5 px-4 py-2 f-18"> Popular Packages</button>
+        </div>
+        <div class='fetured_buttons2'>
+            <button type="button" class="btn btn-outline-primary btn5 px-4 py-2 f-18"> Popular Packages</button>
+        </div>
+        <div class='fetured_buttons2'>
+            <button type="button" class="btn btn-outline-primary btn5 px-4 py-2 f-18"> Popular Packages</button>
+        </div>
+        <div class='fetured_buttons2'>
+            <button type="button" class="btn btn-outline-primary btn5 px-4 py-2 f-18"> Popular Packages</button>
+        </div>
+        <div class='fetured_buttons2'>
+            <button type="button" class="btn btn-outline-primary btn5 px-4 py-2 f-18"> Popular Packages</button>
+        </div>
+        <div class='fetured_buttons2'>
+            <button type="button" class="btn btn-outline-primary btn5 px-4 py-2 f-18"> Popular Packages</button>
+        </div>
+        <div class='fetured_buttons2'>
+            <button type="button" class="btn btn-outline-primary btn5 px-4 py-2 f-18"> Popular Packages</button>
+        </div>
+        <div class='fetured_buttons2'>
+            <button type="button" class="btn btn-outline-primary btn5 px-4 py-2 f-18"> Popular Packages</button>
+        </div>
+        <div class='fetured_buttons2'>
+            <button type="button" class="btn btn-outline-primary btn5 px-4 py-2 f-18"> Popular Packages</button>
+        </div>
+        <div class='fetured_buttons2'>
+            <button type="button" class="btn btn-outline-primary btn5 px-4 py-2 f-18"> Popular Packages</button>
+        </div>
+        <div class='fetured_buttons2'>
+            <button type="button" class="btn btn-outline-primary btn5 px-4 py-2 f-18"> Popular Packages</button>
+        </div>
+        <div class='fetured_buttons2'>
+            <button type="button" class="btn btn-outline-primary btn5 px-4 py-2 f-18"> Popular Packages</button>
+        </div>
+    </div>
+    <div class="pt-3">
+      <div class="row">
+        <div class="col-md-3 px-1">
+          <div class="card package_box">
+            <div class="card-body py-4">
+              <h6 class="card-title mb-2 title2 f-18"><b>Product Name</b> <span class="float-right title3 f-16"><i class="fa fa-star f-12"></i> 4.3</span> </h6>
+              <p class="para_text mb-4">Include 60 Test</p>
+              <p class="para_text m-0">Test 1</p>
+              <p class="para_text m-0">Test 2</p>
+              <p class="para_text m-0">Test 3</p>
+              <p class="para_text mb-4">+More</p>
+              <h4 class=""><span class="title2">Rs 599</span> <span class="para_text f-14"><del>Rs 1099</del></span></h4>
+              <button type="button" class="btn btn-outline-primary btn4 px-3 py-1 f-16 w-100"> Add to Cart</button>
+            </div>
           </div>
         </div>
-        <div class="col-md-2 py-5 px-1 text-center text-white">
-          <div class="box border_right py-3">
-            <i class="fa fa-shopping-cart f-22"></i>
-            <p class="f-12 m-0">Order Medicines</p>
+        <div class="col-md-3 px-1">
+          <div class="card package_box">
+            <div class="card-body py-4">
+              <h6 class="card-title mb-2 title2 f-18"><b>Product Name</b> <span class="float-right title3 f-16"><i class="fa fa-star f-12"></i> 4.3</span> </h6>
+              <p class="para_text mb-4">Include 60 Test</p>
+              <p class="para_text m-0">Test 1</p>
+              <p class="para_text m-0">Test 2</p>
+              <p class="para_text m-0">Test 3</p>
+              <p class="para_text mb-4">+More</p>
+              <h4 class=""><span class="title2">Rs 599</span> <span class="para_text f-14"><del>Rs 1099</del></span></h4>
+              <button type="button" class="btn btn-outline-primary btn4 px-3 py-1 f-16 w-100"> Add to Cart</button>
+            </div>
           </div>
         </div>
-        <div class="col-md-2 py-5 px-1 text-center text-white">
-          <div class="box border_right py-3">
-            <i class="fa fa-list f-22"></i>
-            <p class="f-12 m-0">View Medical Record</p>
+        <div class="col-md-3 px-1">
+          <div class="card package_box">
+            <div class="card-body py-4">
+              <h6 class="card-title mb-2 title2 f-18"><b>Product Name</b> <span class="float-right title3 f-16"><i class="fa fa-star f-12"></i> 4.3</span> </h6>
+              <p class="para_text mb-4">Include 60 Test</p>
+              <p class="para_text m-0">Test 1</p>
+              <p class="para_text m-0">Test 2</p>
+              <p class="para_text m-0">Test 3</p>
+              <p class="para_text mb-4">+More</p>
+              <h4 class=""><span class="title2">Rs 599</span> <span class="para_text f-14"><del>Rs 1099</del></span></h4>
+              <button type="button" class="btn btn-outline-primary btn4 px-3 py-1 f-16 w-100"> Add to Cart</button>
+            </div>
           </div>
         </div>
-        <div class="col-md-2 py-5 px-1 text-center text-white">
-          <div class="box border_right py-3">
-            <i class="fas fa-flask f-22"></i>
-            <p class="f-12 m-0">Book Test</p>
-          </div>
-        </div>
-        <div class="col-md-2 py-5 px-1 text-center text-white">
-          <div class="box border_right py-3">
-            <i class="fas fa-book-open f-22"></i>
-            <p class="f-12 m-0">Read Articles</p>
-          </div>
-        </div>
-        <div class="col-md-2 py-5 px-1 text-center text-white">
-          <div class="box py-3">
-            <i class="fa fa-briefcase f-22"></i>
-            <p class="f-12 m-0">For Healthcare Providers</p>
+        <div class="col-md-3 px-1">
+          <div class="card package_box">
+            <div class="card-body py-4">
+              <h6 class="card-title mb-2 title2 f-18"><b>Product Name</b> <span class="float-right title3 f-16"><i class="fa fa-star f-12"></i> 4.3</span> </h6>
+              <p class="para_text mb-4">Include 60 Test</p>
+              <p class="para_text m-0">Test 1</p>
+              <p class="para_text m-0">Test 2</p>
+              <p class="para_text m-0">Test 3</p>
+              <p class="para_text mb-4">+More</p>
+              <h4 class=""><span class="title2">Rs 599</span> <span class="para_text f-14"><del>Rs 1099</del></span></h4>
+              <button type="button" class="btn btn-outline-primary btn4 px-3 py-1 f-16 w-100"> Add to Cart</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
-  <section class="home_we_work">
-    <div class="container">
-      <h1 class="text-center title1">How We Work</h1>
-      <div class="row ">
-        <!-- service1 -->
-        <div class="col-md-6 py-4">
-          <h2 class="text-left title2">1. Start a Session</h2>
-          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <section class="bg_violet py-5">
+    <div class="container my-3">
+      <div class="row">
+        <div class="col-md-5">
+          <h3 class="title3 mb-3">UNCOMPROMISED QUALITY. RELIABLE RESULT. ALWAYS</h3>
+          <p class="text-white f-18 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
-        <div class="col-md-6 py-4">
-          <img class="work_img" src="<?php base_url(); ?>assets/images/website/service1.png" alt="">
-        </div>
-
-        <!-- service2 -->
-        <div class="col-md-6 py-4">
-          <img class="work_img" src="<?php base_url(); ?>assets/images/website/service2.png" alt="">
-        </div>
-        <div class="col-md-6 py-4">
-          <h2 class="text-left title2">2. Elaborate your Issue</h2>
-          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-
-        <!-- service3 -->
-        <div class="col-md-6 py-4">
-          <h2 class="text-left title2">3. Doctor Gets Connected</h2>
-          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <div class="col-md-6 py-4">
-          <img class="work_img" src="<?php base_url(); ?>assets/images/website/service3.png" alt="">
-        </div>
-
-        <!-- service4 -->
-        <div class="col-md-6 py-4">
-          <img class="work_img" src="<?php base_url(); ?>assets/images/website/service4.png" alt="">
-        </div>
-        <div class="col-md-6 py-4">
-          <h2 class="text-left title2">4. Follow up with your Doctor</h2>
-          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="col-md-7">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen=""></iframe>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="home_features">
-    <div class="row">
-      <div class="col-md-3 text-center py-5">
-        <i class="fa fa-lock"></i>
-        <p class="f-22 m-0 feature_title"><b>100% Confidential</b></p>
-        <p class="feature_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-      <div class="col-md-3 text-center py-5">
-        <i class="fas fa-award"></i>
-        <p class="f-22 m-0 feature_title"><b>Certified Buyers</b></p>
-        <p class="feature_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-      <div class="col-md-3 text-center py-5">
-        <i class="fa fa-lock"></i>
-        <p class="f-22 m-0 feature_title"><b>Easy as a Snap</b></p>
-        <p class="feature_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-      <div class="col-md-3 text-center py-5">
-        <i class="fas fa-wallet"></i>
-        <p class="f-22 m-0 feature_title"><b>Pocket Friendly</b></p>
-        <p class="feature_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <section class="bg_gray py-5">
+    <div class="container">
+      <h4 class="text-center mb-5">Our Happy Customers</h4>
+      <div class="owl-carousel owl-theme owl_carousel_testimonial" >
+        <div class="item px-5">
+          <p class="para_text text-center f-18 font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p class="title2 text-center f-18 font-italic font-weight-bold">-Vaibhav Wadkar</p>
+        </div>
+        <div class="item px-5">
+          <p class="para_text text-center f-18 font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p class="title2 text-center f-18 font-italic font-weight-bold">-Vaibhav Wadkar</p>
+        </div>
+        <div class="item px-5">
+          <p class="para_text text-center f-18 font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p class="title2 text-center f-18 font-italic font-weight-bold">-Vaibhav Wadkar</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <section class="sec_shadow lab_partners_testimonial py-5">
+    <div class="container">
+      <h4 class="text-center mb-5">Our Satisfied Lab Partners</h4>
+      <div class="owl-carousel owl-theme owl_carousel2" >
+        <div class="item">
+          <div class="card partner_box">
+            <div class="card-body py-4">
+              <h5 class="card-title mb-2 title2 f-20 text-center"><b>Lab Name</b></h5>
+              <hr>
+              <div class="row">
+                <div class="col-md-5 align-self-center">
+                  <img class="mx-auto" width="70%" src="<?php base_url(); ?>assets/images/website/lab_logo.png" alt="">
+                </div>
+                <div class="col-md-7">
+                  <p class="para_text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card partner_box">
+            <div class="card-body py-4">
+              <h5 class="card-title mb-2 title2 f-20 text-center"><b>Lab Name</b></h5>
+              <hr>
+              <div class="row">
+                <div class="col-md-5 align-self-center">
+                  <img class="mx-auto" width="70%" src="<?php base_url(); ?>assets/images/website/lab_logo.png" alt="">
+                </div>
+                <div class="col-md-7">
+                  <p class="para_text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="card partner_box">
+            <div class="card-body py-4">
+              <h5 class="card-title mb-2 title2 f-20 text-center"><b>Lab Name</b></h5>
+              <hr>
+              <div class="row">
+                <div class="col-md-5 align-self-center">
+                  <img class="mx-auto" width="70%" src="<?php base_url(); ?>assets/images/website/lab_logo.png" alt="">
+                </div>
+                <div class="col-md-7">
+                  <p class="para_text text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg_gray py-5 my-2">
+    <div class="">
+      <div class="container">
+        <h3 class="text-center text_gray mb-5">Want to book lab test bulk?</h3>
+
+        <p >Get customized package at best price</p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
 
 
   <section class="faq py-5 my-2">
