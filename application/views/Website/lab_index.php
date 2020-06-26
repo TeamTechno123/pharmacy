@@ -276,28 +276,20 @@
 
   <section class="bg_gray py-5 my-2">
     <div class="">
-      <div class="container">
-        <h3 class="text-center text_gray mb-5">Want to book lab test bulk?</h3>
-
-        <p >Get customized package at best price</p>
+      <div class="container my-4">
+        <h3 class="text-center text_gray mb-1">Want to book lab test bulk?</h3>
+        <p class="text_gray text-center f-18 mb-5">Get customized package at best price</p>
+        <div class="text-center w-100">
+          <button type="button" class="btn btn-outline-primary btn4 px-5 py-2 f-18"> Enquier Here &nbsp<i class="fa fa-arrow-right"></i></button>
+        </div>
       </div>
     </div>
   </section>
 
-
-
-
-
-
-
-
-
-
-
-  <section class="faq py-5 my-2">
+  <section class="sec_shadow py-5">
     <div class="">
       <div class="container">
-        <h1 class="text-center title1 mb-5">How We Work</h1>
+        <h3 class="text-center text_gray mb-5">Keep your health in check with Us</h3>
         <p class="mb-1">This is a Deno Question?</p>
         <p class="faq_answer">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <hr>
@@ -316,19 +308,7 @@
     </div>
   </section>
 
-  <section class="areyou_doc py-5 mb-5">
-    <div class="container">
-      <div class="row ">
-        <div class="col-md-6 ">
-          <h2>Are you a Doctor</h2>
-          <p class="areyou_doc_text">Be a part of our panel of specialist and connect with your patients from anywhere </p>
-          <button type="button" class="btn btn-outline-success btn1 px-4 f-14">JOIN US</button>
-        </div>
-        <div class="col-md-6">
-          <img class="work_img" src="<?php base_url(); ?>assets/images/website/doctor1.png" alt="">
-        </div>
-      </div>
-    </div>
+  <section class="home_we_work py-4 my-2" >
   </section>
 
   <section class="home_counter py-5">
