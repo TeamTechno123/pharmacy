@@ -7,20 +7,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       date_default_timezone_set('Asia/Kolkata');
     }
 
-    // public function index(){
-    //     $col_user_id = $this->session->userdata('col_user_id');
-    //     echo $col_user_id;
-    // }
+    public function index(){
+      
+    }
 
 
 /********************************* SLider ***********************************/
 
   // Add Slider...
   public function slider(){
-    $col_user_id = $this->session->userdata('col_user_id');
-    $col_company_id = $this->session->userdata('col_company_id');
-    $col_role_id = $this->session->userdata('col_role_id');
-    if($col_user_id == '' && $col_company_id == ''){ header('location:'.base_url().'User'); }
+    $pharm_user_id = $this->session->userdata('pharm_user_id');
+    $pharm_company_id = $this->session->userdata('pharm_company_id');
+    $pharm_role_id = $this->session->userdata('pharm_role_id');
+    if($pharm_user_id == '' && $pharm_company_id == ''){ header('location:'.base_url().'User'); }
 
     $this->form_validation->set_rules('slider_title', 'slider title', 'trim|required');
     if ($this->form_validation->run() != FALSE) {
@@ -28,8 +27,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       if(!isset($slider_status)){ $slider_status = '1'; }
       $save_data = $_POST;
       $save_data['slider_status'] = $slider_status;
-      $save_data['company_id'] = $col_company_id;
-      $save_data['slider_addedby'] = $col_user_id;
+      $save_data['company_id'] = $pharm_company_id;
+      $save_data['slider_addedby'] = $pharm_user_id;
       $save_data['slider_date'] = date('d-m-Y');
       $save_data['slider_time'] = date('h:i:s A');
       $slider_id = $this->Master_Model->save_data('slider', $save_data);
@@ -58,7 +57,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       header('location:'.base_url().'Master/slider');
     }
 
-    $data['slider_list'] = $this->Master_Model->get_list_by_id3($col_company_id,'','','','','','','slider_id','DESC','slider');
+    $data['slider_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'','','','','','','slider_id','DESC','slider');
     $this->load->view('Include/head', $data);
     $this->load->view('Include/navbar', $data);
     $this->load->view('Master/slider', $data);
@@ -67,10 +66,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   // Edit Slider...
   public function edit_slider($slider_id){
-    $col_user_id = $this->session->userdata('col_user_id');
-    $col_company_id = $this->session->userdata('col_company_id');
-    $col_role_id = $this->session->userdata('col_role_id');
-    if($col_user_id == '' && $col_company_id == ''){ header('location:'.base_url().'User'); }
+    $pharm_user_id = $this->session->userdata('pharm_user_id');
+    $pharm_company_id = $this->session->userdata('pharm_company_id');
+    $pharm_role_id = $this->session->userdata('pharm_role_id');
+    if($pharm_user_id == '' && $pharm_company_id == ''){ header('location:'.base_url().'User'); }
 
     $this->form_validation->set_rules('slider_title', 'slider title', 'trim|required');
     if ($this->form_validation->run() != FALSE) {
@@ -79,7 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $update_data = $_POST;
       unset($update_data['old_slider_img']);
       $update_data['slider_status'] = $slider_status;
-      $update_data['slider_addedby'] = $col_user_id;
+      $update_data['slider_addedby'] = $pharm_user_id;
       $update_data['slider_date'] = date('d-m-Y');
       $update_data['slider_time'] = date('h:i:s A');
       $this->Master_Model->update_info('slider_id', $slider_id, 'slider', $update_data);
@@ -114,7 +113,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $data['slider_info'] = $slider_info[0];
     $data['act_link'] = base_url().'Master/edit_slider/'.$slider_id;
 
-    $data['slider_list'] = $this->Master_Model->get_list_by_id3($col_company_id,'','','','','','','slider_id','DESC','slider');
+    $data['slider_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'','','','','','','slider_id','DESC','slider');
     $this->load->view('Include/head', $data);
     $this->load->view('Include/navbar', $data);
     $this->load->view('Master/slider', $data);
@@ -141,10 +140,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   // Add Main Category....
   public function main_category(){
-    $col_user_id = $this->session->userdata('col_user_id');
-    $col_company_id = $this->session->userdata('col_company_id');
-    $col_role_id = $this->session->userdata('col_role_id');
-    if($col_user_id == '' && $col_company_id == ''){ header('location:'.base_url().'User'); }
+    $pharm_user_id = $this->session->userdata('pharm_user_id');
+    $pharm_company_id = $this->session->userdata('pharm_company_id');
+    $pharm_role_id = $this->session->userdata('pharm_role_id');
+    if($pharm_user_id == '' && $pharm_company_id == ''){ header('location:'.base_url().'User'); }
 
     $this->form_validation->set_rules('main_category_name', 'Batch Name', 'trim|required');
     if ($this->form_validation->run() != FALSE) {
@@ -152,8 +151,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       if(!isset($main_category_status)){ $main_category_status = '1'; }
       $save_data = $_POST;
       $save_data['main_category_status'] = $main_category_status;
-      $save_data['company_id'] = $col_company_id;
-      $save_data['main_category_addedby'] = $col_user_id;
+      $save_data['company_id'] = $pharm_company_id;
+      $save_data['main_category_addedby'] = $pharm_user_id;
       $save_data['main_category_date'] = date('d-m-Y');
       $save_data['main_category_time'] = date('h:i:s A');
       $main_category_id = $this->Master_Model->save_data('main_category', $save_data);
@@ -181,7 +180,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       header('location:'.base_url().'Master/main_category');
     }
 
-    $data['main_category_list'] = $this->Master_Model->get_list_by_id3($col_company_id,'','','','','','','main_category_id','DESC','main_category');
+    $data['main_category_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'','','','','','','main_category_id','DESC','main_category');
     $this->load->view('Include/head', $data);
     $this->load->view('Include/navbar', $data);
     $this->load->view('Master/main_category', $data);
@@ -190,10 +189,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   // Edit/Update Batch...
   public function edit_main_category($main_category_id){
-    $col_user_id = $this->session->userdata('col_user_id');
-    $col_company_id = $this->session->userdata('col_company_id');
-    $col_role_id = $this->session->userdata('col_role_id');
-    if($col_user_id == '' && $col_company_id == ''){ header('location:'.base_url().'User'); }
+    $pharm_user_id = $this->session->userdata('pharm_user_id');
+    $pharm_company_id = $this->session->userdata('pharm_company_id');
+    $pharm_role_id = $this->session->userdata('pharm_role_id');
+    if($pharm_user_id == '' && $pharm_company_id == ''){ header('location:'.base_url().'User'); }
 
     $this->form_validation->set_rules('main_category_name', 'First Name', 'trim|required');
     if ($this->form_validation->run() != FALSE) {
@@ -202,7 +201,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $update_data = $_POST;
       unset($update_data['old_main_category_img']);
       $update_data['main_category_status'] = $main_category_status;
-      $update_data['main_category_addedby'] = $col_user_id;
+      $update_data['main_category_addedby'] = $pharm_user_id;
       $update_data['main_category_date'] = date('d-m-Y');
       $update_data['main_category_time'] = date('h:i:s A');
       $this->Master_Model->update_info('main_category_id', $main_category_id, 'main_category', $update_data);
@@ -239,7 +238,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $data['main_category_info'] = $main_category_info[0];
     $data['act_link'] = base_url().'Master/edit_main_category/'.$main_category_id;
 
-    $data['main_category_list'] = $this->Master_Model->get_list_by_id3($col_company_id,'','','','','','','main_category_id','DESC','main_category');
+    $data['main_category_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'','','','','','','main_category_id','DESC','main_category');
     $this->load->view('Include/head', $data);
     $this->load->view('Include/navbar', $data);
     $this->load->view('Master/main_category', $data);
@@ -248,10 +247,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   //Delete Batch...
   public function delete_main_category($main_category_id){
-    $col_user_id = $this->session->userdata('col_user_id');
-    $col_company_id = $this->session->userdata('col_company_id');
-    $col_role_id = $this->session->userdata('col_role_id');
-    if($col_user_id == '' && $col_company_id == ''){ header('location:'.base_url().'User'); }
+    $pharm_user_id = $this->session->userdata('pharm_user_id');
+    $pharm_company_id = $this->session->userdata('pharm_company_id');
+    $pharm_role_id = $this->session->userdata('pharm_role_id');
+    if($pharm_user_id == '' && $pharm_company_id == ''){ header('location:'.base_url().'User'); }
     $main_category_info = $this->Master_Model->get_info_arr_fields('main_category_image, main_category_id', 'main_category_id', $main_category_id, 'main_category');
     if($main_category_info){
       $main_category_image = $main_category_info[0]['main_category_image'];
@@ -266,10 +265,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   // Add Sub Category....
   public function sub_category(){
-    $col_user_id = $this->session->userdata('col_user_id');
-    $col_company_id = $this->session->userdata('col_company_id');
-    $col_role_id = $this->session->userdata('col_role_id');
-    if($col_user_id == '' && $col_company_id == ''){ header('location:'.base_url().'User'); }
+    $pharm_user_id = $this->session->userdata('pharm_user_id');
+    $pharm_company_id = $this->session->userdata('pharm_company_id');
+    $pharm_role_id = $this->session->userdata('pharm_role_id');
+    if($pharm_user_id == '' && $pharm_company_id == ''){ header('location:'.base_url().'User'); }
 
     $this->form_validation->set_rules('sub_category_name', 'Batch Name', 'trim|required');
     if ($this->form_validation->run() != FALSE) {
@@ -277,8 +276,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       if(!isset($sub_category_status)){ $sub_category_status = '1'; }
       $save_data = $_POST;
       $save_data['sub_category_status'] = $sub_category_status;
-      $save_data['company_id'] = $col_company_id;
-      $save_data['sub_category_addedby'] = $col_user_id;
+      $save_data['company_id'] = $pharm_company_id;
+      $save_data['sub_category_addedby'] = $pharm_user_id;
       $save_data['sub_category_date'] = date('d-m-Y');
       $save_data['sub_category_time'] = date('h:i:s A');
       $sub_category_id = $this->Master_Model->save_data('sub_category', $save_data);
@@ -305,8 +304,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $this->session->set_flashdata('save_success','success');
       header('location:'.base_url().'Master/sub_category');
     }
-    $data['main_category_list'] = $this->Master_Model->get_list_by_id3($col_company_id,'main_category_status','1','','','','','main_category_id','DESC','main_category');
-    $data['sub_category_list'] = $this->Master_Model->get_list_by_id3($col_company_id,'','','','','','','sub_category_id','DESC','sub_category');
+    $data['main_category_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'main_category_status','1','','','','','main_category_id','DESC','main_category');
+    $data['sub_category_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'','','','','','','sub_category_id','DESC','sub_category');
     $this->load->view('Include/head', $data);
     $this->load->view('Include/navbar', $data);
     $this->load->view('Master/sub_category', $data);
@@ -315,10 +314,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   // Edit/Update Sub Category...
   public function edit_sub_category($sub_category_id){
-    $col_user_id = $this->session->userdata('col_user_id');
-    $col_company_id = $this->session->userdata('col_company_id');
-    $col_role_id = $this->session->userdata('col_role_id');
-    if($col_user_id == '' && $col_company_id == ''){ header('location:'.base_url().'User'); }
+    $pharm_user_id = $this->session->userdata('pharm_user_id');
+    $pharm_company_id = $this->session->userdata('pharm_company_id');
+    $pharm_role_id = $this->session->userdata('pharm_role_id');
+    if($pharm_user_id == '' && $pharm_company_id == ''){ header('location:'.base_url().'User'); }
 
     $this->form_validation->set_rules('sub_category_name', 'First Name', 'trim|required');
     if ($this->form_validation->run() != FALSE) {
@@ -327,7 +326,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $update_data = $_POST;
       unset($update_data['old_sub_category_img']);
       $update_data['sub_category_status'] = $sub_category_status;
-      $update_data['sub_category_addedby'] = $col_user_id;
+      $update_data['sub_category_addedby'] = $pharm_user_id;
       $update_data['sub_category_date'] = date('d-m-Y');
       $update_data['sub_category_time'] = date('h:i:s A');
       $this->Master_Model->update_info('sub_category_id', $sub_category_id, 'sub_category', $update_data);
@@ -364,8 +363,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $data['sub_category_info'] = $sub_category_info[0];
     $data['act_link'] = base_url().'Master/edit_sub_category/'.$sub_category_id;
 
-    $data['main_category_list'] = $this->Master_Model->get_list_by_id3($col_company_id,'main_category_status','1','','','','','main_category_id','DESC','main_category');
-    $data['sub_category_list'] = $this->Master_Model->get_list_by_id3($col_company_id,'','','','','','','sub_category_id','DESC','sub_category');
+    $data['main_category_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'main_category_status','1','','','','','main_category_id','DESC','main_category');
+    $data['sub_category_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'','','','','','','sub_category_id','DESC','sub_category');
     $this->load->view('Include/head', $data);
     $this->load->view('Include/navbar', $data);
     $this->load->view('Master/sub_category', $data);
@@ -374,10 +373,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   //Delete Sub Category....
   public function delete_sub_category($sub_category_id){
-    $col_user_id = $this->session->userdata('col_user_id');
-    $col_company_id = $this->session->userdata('col_company_id');
-    $col_role_id = $this->session->userdata('col_role_id');
-    if($col_user_id == '' && $col_company_id == ''){ header('location:'.base_url().'User'); }
+    $pharm_user_id = $this->session->userdata('pharm_user_id');
+    $pharm_company_id = $this->session->userdata('pharm_company_id');
+    $pharm_role_id = $this->session->userdata('pharm_role_id');
+    if($pharm_user_id == '' && $pharm_company_id == ''){ header('location:'.base_url().'User'); }
     $sub_category_info = $this->Master_Model->get_info_arr_fields('sub_category_image, sub_category_id', 'sub_category_id', $sub_category_id, 'sub_category');
     if($sub_category_info){
       $sub_category_image = $sub_category_info[0]['sub_category_image'];
@@ -391,10 +390,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
   // public function sub_category_information(){
-  //   $col_user_id = $this->session->userdata('col_user_id');
-  //   $col_company_id = $this->session->userdata('col_company_id');
-  //   $col_role_id = $this->session->userdata('col_role_id');
-  //   if($col_user_id == '' && $col_company_id == ''){ header('location:'.base_url().'User'); }
+  //   $pharm_user_id = $this->session->userdata('pharm_user_id');
+  //   $pharm_company_id = $this->session->userdata('pharm_company_id');
+  //   $pharm_role_id = $this->session->userdata('pharm_role_id');
+  //   if($pharm_user_id == '' && $pharm_company_id == ''){ header('location:'.base_url().'User'); }
   //   $this->load->view('Include/head');
   //   $this->load->view('Include/navbar');
   //   $this->load->view('Master/sub_category_information');
@@ -405,10 +404,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   // Add Blog....
   public function blog(){
-    $col_user_id = $this->session->userdata('col_user_id');
-    $col_company_id = $this->session->userdata('col_company_id');
-    $col_role_id = $this->session->userdata('col_role_id');
-    if($col_user_id == '' && $col_company_id == ''){ header('location:'.base_url().'User'); }
+    $pharm_user_id = $this->session->userdata('pharm_user_id');
+    $pharm_company_id = $this->session->userdata('pharm_company_id');
+    $pharm_role_id = $this->session->userdata('pharm_role_id');
+    if($pharm_user_id == '' && $pharm_company_id == ''){ header('location:'.base_url().'User'); }
 
     $this->form_validation->set_rules('blog_title', 'Batch Name', 'trim|required');
     if ($this->form_validation->run() != FALSE) {
@@ -416,8 +415,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       if(!isset($blog_status)){ $blog_status = '1'; }
       $save_data = $_POST;
       $save_data['blog_status'] = $blog_status;
-      $save_data['company_id'] = $col_company_id;
-      $save_data['blog_addedby'] = $col_user_id;
+      $save_data['company_id'] = $pharm_company_id;
+      $save_data['blog_addedby'] = $pharm_user_id;
       $save_data['blog_date'] = date('d-m-Y');
       $save_data['blog_time'] = date('h:i:s A');
       $blog_id = $this->Master_Model->save_data('blog', $save_data);
@@ -444,8 +443,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $this->session->set_flashdata('save_success','success');
       header('location:'.base_url().'Master/blog');
     }
-    // $data['main_category_list'] = $this->Master_Model->get_list_by_id3($col_company_id,'main_category_status','1','','','','','main_category_id','DESC','main_category');
-    $data['blog_list'] = $this->Master_Model->get_list_by_id3($col_company_id,'','','','','','','blog_id','DESC','blog');
+    // $data['main_category_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'main_category_status','1','','','','','main_category_id','DESC','main_category');
+    $data['blog_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'','','','','','','blog_id','DESC','blog');
     $this->load->view('Include/head', $data);
     $this->load->view('Include/navbar', $data);
     $this->load->view('Master/blog', $data);
@@ -454,10 +453,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   // Edit/Update Blog...
   public function edit_blog($blog_id){
-    $col_user_id = $this->session->userdata('col_user_id');
-    $col_company_id = $this->session->userdata('col_company_id');
-    $col_role_id = $this->session->userdata('col_role_id');
-    if($col_user_id == '' && $col_company_id == ''){ header('location:'.base_url().'User'); }
+    $pharm_user_id = $this->session->userdata('pharm_user_id');
+    $pharm_company_id = $this->session->userdata('pharm_company_id');
+    $pharm_role_id = $this->session->userdata('pharm_role_id');
+    if($pharm_user_id == '' && $pharm_company_id == ''){ header('location:'.base_url().'User'); }
 
     $this->form_validation->set_rules('blog_title', 'First Name', 'trim|required');
     if ($this->form_validation->run() != FALSE) {
@@ -466,7 +465,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $update_data = $_POST;
       unset($update_data['old_blog_image']);
       $update_data['blog_status'] = $blog_status;
-      $update_data['blog_addedby'] = $col_user_id;
+      $update_data['blog_addedby'] = $pharm_user_id;
       $update_data['blog_date'] = date('d-m-Y');
       $update_data['blog_time'] = date('h:i:s A');
       $this->Master_Model->update_info('blog_id', $blog_id, 'blog', $update_data);
@@ -503,8 +502,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $data['blog_info'] = $blog_info[0];
     $data['act_link'] = base_url().'Master/edit_blog/'.$blog_id;
 
-    // $data['main_category_list'] = $this->Master_Model->get_list_by_id3($col_company_id,'main_category_status','1','','','','','main_category_id','DESC','main_category');
-    $data['blog_list'] = $this->Master_Model->get_list_by_id3($col_company_id,'','','','','','','blog_id','DESC','blog');
+    // $data['main_category_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'main_category_status','1','','','','','main_category_id','DESC','main_category');
+    $data['blog_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'','','','','','','blog_id','DESC','blog');
     $this->load->view('Include/head', $data);
     $this->load->view('Include/navbar', $data);
     $this->load->view('Master/blog', $data);
@@ -513,10 +512,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   //Delete Blog....
   public function delete_blog($blog_id){
-    $col_user_id = $this->session->userdata('col_user_id');
-    $col_company_id = $this->session->userdata('col_company_id');
-    $col_role_id = $this->session->userdata('col_role_id');
-    if($col_user_id == '' && $col_company_id == ''){ header('location:'.base_url().'User'); }
+    $pharm_user_id = $this->session->userdata('pharm_user_id');
+    $pharm_company_id = $this->session->userdata('pharm_company_id');
+    $pharm_role_id = $this->session->userdata('pharm_role_id');
+    if($pharm_user_id == '' && $pharm_company_id == ''){ header('location:'.base_url().'User'); }
     $blog_info = $this->Master_Model->get_info_arr_fields('blog_image, blog_id', 'blog_id', $blog_id, 'blog');
     if($blog_info){
       $blog_image = $blog_info[0]['blog_image'];
@@ -531,10 +530,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   // Add Product....
   public function product(){
-    $col_user_id = $this->session->userdata('col_user_id');
-    $col_company_id = $this->session->userdata('col_company_id');
-    $col_role_id = $this->session->userdata('col_role_id');
-    if($col_user_id == '' && $col_company_id == ''){ header('location:'.base_url().'User'); }
+    $pharm_user_id = $this->session->userdata('pharm_user_id');
+    $pharm_company_id = $this->session->userdata('pharm_company_id');
+    $pharm_role_id = $this->session->userdata('pharm_role_id');
+    if($pharm_user_id == '' && $pharm_company_id == ''){ header('location:'.base_url().'User'); }
 
     $this->form_validation->set_rules('product_name', 'Batch Name', 'trim|required');
     if ($this->form_validation->run() != FALSE) {
@@ -543,13 +542,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $save_data = $_POST;
       unset($save_data['attribute']);
       $save_data['product_status'] = $product_status;
-      $save_data['company_id'] = $col_company_id;
-      $save_data['product_addedby'] = $col_user_id;
+      $save_data['company_id'] = $pharm_company_id;
+      $save_data['product_addedby'] = $pharm_user_id;
       $product_id = $this->Master_Model->save_data('product', $save_data);
 
       foreach($_POST['attribute'] as $multi_data){
         $multi_data['product_id'] = $product_id;
-        $multi_data['product_attribute_addedby'] = $col_user_id;
+        $multi_data['product_attribute_addedby'] = $pharm_user_id;
         $this->db->insert('product_attribute', $multi_data);
       }
 
@@ -576,10 +575,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       header('location:'.base_url().'Master/product');
     }
     $data['gst_list'] = $this->Master_Model->get_list_by_id3('','gst_status','1','','','','','gst_id','ASC','gst');
-    $data['main_category_list'] = $this->Master_Model->get_list_by_id3($col_company_id,'main_category_status','1','','','','','main_category_id','DESC','main_category');
+    $data['main_category_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'main_category_status','1','','','','','main_category_id','DESC','main_category');
     $data['unit_list'] = $this->Master_Model->get_list_by_id3('','unit_status','1','','','','','unit_id','ASC','unit');
 
-    $data['product_list'] = $this->Master_Model->get_list_by_id3($col_company_id,'','','','','','','product_id','DESC','product');
+    $data['product_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'','','','','','','product_id','DESC','product');
     $this->load->view('Include/head', $data);
     $this->load->view('Include/navbar', $data);
     $this->load->view('Master/product', $data);
@@ -588,10 +587,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   // Edit/Update Product...
   public function edit_product($product_id){
-    $col_user_id = $this->session->userdata('col_user_id');
-    $col_company_id = $this->session->userdata('col_company_id');
-    $col_role_id = $this->session->userdata('col_role_id');
-    if($col_user_id == '' && $col_company_id == ''){ header('location:'.base_url().'User'); }
+    $pharm_user_id = $this->session->userdata('pharm_user_id');
+    $pharm_company_id = $this->session->userdata('pharm_company_id');
+    $pharm_role_id = $this->session->userdata('pharm_role_id');
+    if($pharm_user_id == '' && $pharm_company_id == ''){ header('location:'.base_url().'User'); }
 
     $this->form_validation->set_rules('product_name', 'First Name', 'trim|required');
     if ($this->form_validation->run() != FALSE) {
@@ -601,7 +600,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       unset($update_data['attribute']);
       unset($update_data['old_product_image']);
       $update_data['product_status'] = $product_status;
-      $update_data['product_addedby'] = $col_user_id;
+      $update_data['product_addedby'] = $pharm_user_id;
       $this->Master_Model->update_info('product_id', $product_id, 'product', $update_data);
 
 
@@ -611,13 +610,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           if(!isset($multi_data['product_attribute_price'])){
             $this->Master_Model->delete_info('product_attribute_id', $product_attribute_id, 'product_attribute');
           }else{
-            $multi_data['product_attribute_addedby'] = $col_user_id;
+            $multi_data['product_attribute_addedby'] = $pharm_user_id;
             $this->Master_Model->update_info('product_attribute_id', $product_attribute_id, 'product_attribute', $multi_data);
           }
         }
         else{
           $multi_data['product_id'] = $product_id;
-          $multi_data['product_attribute_addedby'] = $col_user_id;
+          $multi_data['product_attribute_addedby'] = $pharm_user_id;
           $this->db->insert('product_attribute', $multi_data);
         }
       }
@@ -654,12 +653,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     $data['act_link'] = base_url().'Master/edit_product/'.$product_id;
 
     $main_category_id = $product_info[0]['main_category_id'];
-    $data['main_category_list'] = $this->Master_Model->get_list_by_id3($col_company_id,'main_category_status','1','','','','','main_category_name','ASC','main_category');
-    $data['sub_category_list'] = $this->Master_Model->get_list_by_id3($col_company_id,'sub_category_status','1','main_category_id',$main_category_id,'','','sub_category_name','ASC','sub_category');
+    $data['main_category_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'main_category_status','1','','','','','main_category_name','ASC','main_category');
+    $data['sub_category_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'sub_category_status','1','main_category_id',$main_category_id,'','','sub_category_name','ASC','sub_category');
     $data['unit_list'] = $this->Master_Model->get_list_by_id3('','unit_status','1','','','','','unit_id','ASC','unit');
     $data['gst_list'] = $this->Master_Model->get_list_by_id3('','gst_status','1','','','','','gst_id','DESC','gst');
 
-    $data['product_list'] = $this->Master_Model->get_list_by_id3($col_company_id,'','','','','','','product_id','DESC','product');
+    $data['product_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'','','','','','','product_id','DESC','product');
     $data['product_attribute_list'] = $this->Master_Model->get_list_by_id3('','product_id',$product_id,'','','','','product_attribute_id','ASC','product_attribute');
     $this->load->view('Include/head', $data);
     $this->load->view('Include/navbar', $data);
@@ -669,10 +668,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   //Delete Product....
   public function delete_product($product_id){
-    $col_user_id = $this->session->userdata('col_user_id');
-    $col_company_id = $this->session->userdata('col_company_id');
-    $col_role_id = $this->session->userdata('col_role_id');
-    if($col_user_id == '' && $col_company_id == ''){ header('location:'.base_url().'User'); }
+    $pharm_user_id = $this->session->userdata('pharm_user_id');
+    $pharm_company_id = $this->session->userdata('pharm_company_id');
+    $pharm_role_id = $this->session->userdata('pharm_role_id');
+    if($pharm_user_id == '' && $pharm_company_id == ''){ header('location:'.base_url().'User'); }
     $product_info = $this->Master_Model->get_info_arr_fields('product_image, product_id', 'product_id', $product_id, 'product');
     if($product_info){
       $product_image = $product_info[0]['product_image'];
@@ -684,10 +683,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   }
 
   public function order_list(){
-    $col_user_id = $this->session->userdata('col_user_id');
-    $col_company_id = $this->session->userdata('col_company_id');
-    $col_role_id = $this->session->userdata('col_role_id');
-    if($col_user_id == '' && $col_company_id == ''){ header('location:'.base_url().'User'); }
+    $pharm_user_id = $this->session->userdata('pharm_user_id');
+    $pharm_company_id = $this->session->userdata('pharm_company_id');
+    $pharm_role_id = $this->session->userdata('pharm_role_id');
+    if($pharm_user_id == '' && $pharm_company_id == ''){ header('location:'.base_url().'User'); }
     $this->load->view('Include/head');
     $this->load->view('Include/navbar');
     $this->load->view('Master/order_list');
