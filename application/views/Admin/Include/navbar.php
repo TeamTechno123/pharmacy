@@ -67,7 +67,7 @@
           </a>
           <ul class="nav nav-treeview" style="display: none;">
             <li class="nav-item">
-              <a href="<?php echo base_url(); ?>User/company_list" class="nav-link">
+              <a <?php if(isset($update_company)){ echo 'href="'.$act_link.'"'; } else{ ?> href="<?php echo base_url(); ?>User/company_list" <?php } ?> class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Company Information</p>
               </a>
@@ -75,7 +75,13 @@
             <li class="nav-item">
               <a <?php if(isset($update_user)){ echo 'href="'.$act_link.'"'; } else{ ?> href="<?php echo base_url(); ?>User/user_information" <?php } ?> class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>User Information</p>
+                <p>User</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a <?php if(isset($update_role)){ echo 'href="'.$act_link.'"'; } else{ ?> href="<?php echo base_url(); ?>User/role" <?php } ?> class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Role</p>
               </a>
             </li>
           </ul>
@@ -90,6 +96,14 @@
             </p>
           </a>
           <ul class="nav nav-treeview" style="display: none;">
+            <li class="nav-item">
+              <a <?php if(isset($update_unit)){ echo 'href="'.$act_link.'"'; } else{ ?> href="<?php echo base_url(); ?>Master/unit" <?php } ?> class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Unit</p>
+              </a>
+            </li>
+
+
             <li class="nav-item">
               <a <?php if(isset($update_slider)){ echo 'href="'.$act_link.'"'; } else{ ?> href="<?php echo base_url(); ?>Master/slider" <?php } ?> class="nav-link">
                 <i class="far fa-circle nav-icon"></i>

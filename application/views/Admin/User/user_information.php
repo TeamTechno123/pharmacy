@@ -32,15 +32,24 @@
               <div class="card-body p-0" <?php if(isset($update)){ echo 'style="display: block;"'; } else{ echo 'style="display: none;"'; } ?>>
                 <form class="input_form m-0" id="form_action" role="form" action="" method="post">
                   <div class="row p-4">
-                    <div class="form-group col-md-6 select_sm">
+                    <div class="form-group col-md-12">
                       <label>Name of User</label>
                       <input type="text" class="form-control form-control-sm" name="user_name" id="user_name" value="<?php if(isset($user_info)){ echo $user_info['user_name']; } ?>"  placeholder="Enter Name of User" required >
                     </div>
                     <div class="form-group col-md-6 select_sm">
+                      <label>Select Role</label>
+                      <select class="form-control select2" name="role_id" id="role_id" data-placeholder="Select Role" required>
+                        <option value="">Select Role</option>
+                        <?php if(isset($role_list)){ foreach ($role_list as $list) { ?>
+                        <option value="<?php echo $list->role_id; ?>" <?php if(isset($company_info) && $company_info['role_id'] == $list->role_id){ echo 'selected'; } ?>><?php echo $list->role_name; ?></option>
+                        <?php } } ?>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
                       <label>City</label>
                       <input type="text" class="form-control form-control-sm" name="user_city" id="user_city" value="<?php if(isset($user_info)){ echo $user_info['user_city']; } ?>"  placeholder="City" required >
                     </div>
-                    <div class="form-group col-md-6 select_sm">
+                    <div class="form-group col-md-6">
                       <label>Mobile No.</label>
                       <input type="number" min="5000000000" max="9999999999" class="form-control form-control-sm" name="user_mobile" id="user_mobile" value="<?php if(isset($user_info)){ echo $user_info['user_mobile']; } ?>"  placeholder="Enter Mobile No." required >
                     </div>

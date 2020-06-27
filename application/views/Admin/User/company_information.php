@@ -5,9 +5,7 @@
 ?>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
-  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -21,30 +19,27 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <!-- left column -->
           <div class="col-md-10 offset-md-1">
-            <!-- general form elements -->
             <div class="card card-default">
               <div class="card-header">
                 <h3 class="card-title">Company Information</h3>
               </div>
-              <form class="input_form" action="" method="post" enctype="multipart/form-data">
-
+              <form class="input_form" action="" method="post" enctype="multipart/form-data" autocomplete="off">
                 <div class="card-body row">
                   <div class="form-group col-md-12">
                     <label>Company Name</label>
-                    <input type="text" class="form-control form-control-sm" name="company_name" id="company_name" value="<?php if(isset($company_name)){ echo $company_name; } ?>" placeholder="Enter Company Name" required>
+                    <input type="text" class="form-control form-control-sm" name="company_name" id="company_name" value="<?php if(isset($company_info)){ echo $company_info['company_name']; } ?>" placeholder="Enter Company Name" required>
                   </div>
                   <div class="form-group col-md-12">
                     <label>Address</label>
-                    <textarea class="form-control form-control-sm" rows="3" name="company_address" id="company_address" placeholder="Enter Company Address" required><?php if(isset($company_address)){ echo $company_address; } ?></textarea>
+                    <textarea class="form-control form-control-sm" rows="3" name="company_address" id="company_address" placeholder="Enter Company Address" required><?php if(isset($company_info)){ echo $company_info['company_address']; } ?></textarea>
                   </div>
                   <div class="form-group col-md-4 select_sm">
                     <label>Select Country</label>
                     <select class="form-control select2" name="country_id" id="country_id" data-placeholder="Select Country" required>
                       <option value="">Select Country</option>
                       <?php if(isset($country_list)){ foreach ($country_list as $list) { ?>
-                      <option value="<?php echo $list->country_id; ?>" <?php if(isset($country_id) && $country_id == $list->country_id){ echo 'selected'; } ?>><?php echo $list->country_name; ?></option>
+                      <option value="<?php echo $list->country_id; ?>" <?php if(isset($company_info) && $company_info['country_id'] == $list->country_id){ echo 'selected'; } ?>><?php echo $list->country_name; ?></option>
                       <?php } } ?>
                     </select>
                   </div>
@@ -53,63 +48,51 @@
                     <select class="form-control select2" name="state_id" id="state_id" data-placeholder="Select State" required>
                       <option value="">Select State</option>
                       <?php if(isset($state_list)){ foreach ($state_list as $list) { ?>
-                      <option value="<?php echo $list->state_id; ?>" <?php if(isset($state_id) && $state_id == $list->state_id){ echo 'selected'; } ?>><?php echo $list->state_name; ?></option>
+                      <option value="<?php echo $list->state_id; ?>" <?php if(isset($company_info) && $company_info['state_id'] == $list->state_id){ echo 'selected'; } ?>><?php echo $list->state_name; ?></option>
                       <?php } } ?>
                     </select>
                   </div>
-
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-4 select_sm">
+                    <label>Select District</label>
+                    <select class="form-control select2" name="district_id" id="district_id" data-placeholder="Select District" required>
+                      <option value="">Select District</option>
+                      <?php if(isset($district_list)){ foreach ($district_list as $list) { ?>
+                      <option value="<?php echo $list->district_id; ?>" <?php if(isset($company_info) && $company_info['district_id'] == $list->district_id){ echo 'selected'; } ?>><?php echo $list->district_name; ?></option>
+                      <?php } } ?>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
                     <label>Statecode</label>
-                    <input type="number" class="form-control form-control-sm" name="company_statecode" id="company_statecode" value="<?php if(isset($company_statecode)){ echo $company_statecode; } ?>" placeholder="Statecode">
+                    <input type="number" class="form-control form-control-sm" name="company_statecode" id="company_statecode" value="<?php if(isset($company_info)){ echo $company_info['company_statecode']; } ?>" placeholder="Statecode">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label>Pin/Zip Code</label>
+                    <input type="number" class="form-control form-control-sm" name="company_pincode" id="company_pincode" value="<?php if(isset($company_info)){ echo $company_info['company_pincode']; } ?>" placeholder="Pin/Zip Code">
                   </div>
                   <div class="form-group col-md-6">
                     <label>Mobile No. 1</label>
-                    <input type="number" class="form-control form-control-sm" name="company_mob1" id="company_mob1" value="<?php if(isset($company_mob1)){ echo $company_mob1; } ?>" placeholder="Mobile No. 1" required>
+                    <input type="number" class="form-control form-control-sm" name="company_mob1" id="company_mob1" value="<?php if(isset($company_info)){ echo $company_info['company_mob1']; } ?>" placeholder="Mobile No. 1" required>
                   </div>
                   <div class="form-group col-md-6">
                     <label>Mobile No. 2 / Landline No.</label>
-                    <input type="number" class="form-control form-control-sm" name="company_mob2" id="company_mob2" value="<?php if(isset($company_mob2)){ echo $company_mob2; } ?>" placeholder="Mobile No. 2">
+                    <input type="number" class="form-control form-control-sm" name="company_mob2" id="company_mob2" value="<?php if(isset($company_info)){ echo $company_info['company_mob2']; } ?>" placeholder="Mobile No. 2">
                   </div>
                   <div class="form-group col-md-6">
                     <label>Email Id</label>
-                    <input type="email" class="form-control form-control-sm" name="company_email" id="company_email" value="<?php if(isset($company_email)){ echo $company_email; } ?>" placeholder="Email" required>
+                    <input type="email" class="form-control form-control-sm" name="company_email" id="company_email" value="<?php if(isset($company_info)){ echo $company_info['company_email']; } ?>" placeholder="Email" required>
                   </div>
                   <div class="form-group col-md-6">
                     <label>Website</label>
-                    <input type="text" class="form-control form-control-sm" name="company_website" id="company_website" value="<?php if(isset($company_website)){ echo $company_website; } ?>" placeholder="Website">
+                    <input type="text" class="form-control form-control-sm" name="company_website" id="company_website" value="<?php if(isset($company_info)){ echo $company_info['company_website']; } ?>" placeholder="Website">
                   </div>
                   <div class="form-group col-md-6">
                     <label>PAN No.</label>
-                    <input type="text" class="form-control form-control-sm" name="company_pan_no" id="company_pan_no" value="<?php if(isset($company_pan_no)){ echo $company_pan_no; } ?>" placeholder="Pan No.">
+                    <input type="text" class="form-control form-control-sm" name="company_pan_no" id="company_pan_no" value="<?php if(isset($company_info)){ echo $company_info['company_pan_no']; } ?>" placeholder="Pan No.">
                   </div>
                   <div class="form-group col-md-6">
                     <label>GST No.</label>
-                    <input type="text" class="form-control form-control-sm" name="company_gst_no" id="company_gst_no" value="<?php if(isset($company_gst_no)){ echo $company_gst_no; } ?>" placeholder="GST No.">
+                    <input type="text" class="form-control form-control-sm" name="company_gst_no" id="company_gst_no" value="<?php if(isset($company_info)){ echo $company_info['company_gst_no']; } ?>" placeholder="GST No.">
                   </div>
-                  <div class="form-group col-md-6">
-                    <label>Enter CIN No.</label>
-                    <input type="text" class="form-control form-control-sm" name="company_cin_no" id="company_cin_no" value="<?php if(isset($company_cin_no)){ echo $company_cin_no; } ?>" placeholder="Enter CIN No.">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label>Enter IEC Code No.</label>
-                    <input type="text" class="form-control form-control-sm" name="company_iec_no" id="company_iec_no" value="<?php if(isset($company_iec_no)){ echo $company_iec_no; } ?>" placeholder="Enter IEC Code No.">
-                  </div>
-                  <!-- <div class="form-group col-md-6">
-                    <label>Company Logo</label>
-                    <input type="file" name="company_logo" value="">
-                  </div>
-                  <div class="col-md-6">
-
-                  </div> -->
-                  <!-- <div class="form-group col-md-6">
-                    <label>Admin Email Id</label>
-                    <input type="email" class="form-control form-control-sm" name="company_email" id="company_email" value="<?php if(isset($company_email)){ echo $company_email; } ?>" placeholder="Email" required>
-                  </div>
-
-                  <div class="form-group col-md-6">
-                    <label>Admin Password</label>
-                    <input type="password" class="form-control form-control-sm" name="admin_password" id="admin_password" value="<?php if(isset($admin_password)){ echo $admin_password; } ?>" placeholder="Password" required>
-                  </div> -->
 
                   <?php if(isset($update)){ }else{ ?>
                     <div class="form-group col-md-6">
@@ -134,26 +117,16 @@
                     </div>
                   <?php } ?>
                 </div>
-                <!-- /.card-body -->
                 <div class="card-footer">
-                  <?php if(isset($update)){ ?>
-                    <button type="submit" class="btn btn-primary">Update Company</button>
-                  <?php }else{ ?>
-                    <button type="submit" class="btn btn-success">Create Company</button>
-                  <?php } ?>
-                  <a href="<?php echo base_url(); ?>/User/company_information_list" class="btn btn-default ml-4">Cancel</a>
+                  <button type="submit" class="btn btn-primary">Update Company</button>
+                  <a href="<?php echo base_url(); ?>/User/company_list" class="btn btn-default ml-4">Cancel</a>
                 </div>
               </form>
             </div>
           </div>
-          <!--/.col (left) -->
-          <!-- right column -->
-          <!--/.col (right) -->
         </div>
-        <!-- /.row -->
       </div><!-- /.container-fluid -->
     </section>
   </div>
-
 </body>
 </html>
