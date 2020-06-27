@@ -79,7 +79,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   public function delete_unit($unit_id){
     $pharm_user_id = $this->session->userdata('pharm_user_id');
     $pharm_company_id = $this->session->userdata('pharm_company_id');
-    $pharm_unit_id = $this->session->userdata('pharm_unit_id');
+    $pharm_role_id = $this->session->userdata('pharm_role_id');
     if($pharm_user_id == '' || $pharm_company_id == ''){ header('location:'.base_url().'User'); }
     $this->Master_Model->delete_info('unit_id', $unit_id, 'unit');
     $this->session->set_flashdata('delete_success','success');
@@ -89,76 +89,76 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /********************************* GST Slab ***********************************/
   // Add GST Slab...
-  public function unit(){
+  public function gst(){
     $pharm_user_id = $this->session->userdata('pharm_user_id');
     $pharm_company_id = $this->session->userdata('pharm_company_id');
     $pharm_role_id = $this->session->userdata('pharm_role_id');
     if($pharm_user_id == '' || $pharm_company_id == ''){ header('location:'.base_url().'User'); }
 
-    $this->form_validation->set_rules('unit_name', 'GST Slab Name', 'trim|required');
+    $this->form_validation->set_rules('gst_title', 'GST Slab Name', 'trim|required');
     if ($this->form_validation->run() != FALSE) {
-      $unit_status = $this->input->post('unit_status');
-      if(!isset($unit_status)){ $unit_status = '1'; }
+      $gst_status = $this->input->post('gst_status');
+      if(!isset($gst_status)){ $gst_status = '1'; }
       $save_data = $_POST;
-      $save_data['unit_status'] = $unit_status;
+      $save_data['gst_status'] = $gst_status;
       $save_data['company_id'] = $pharm_company_id;
-      $save_data['unit_addedby'] = $pharm_user_id;
-      $user_id = $this->Master_Model->save_data('unit', $save_data);
+      $save_data['gst_addedby'] = $pharm_user_id;
+      $user_id = $this->Master_Model->save_data('gst', $save_data);
 
       $this->session->set_flashdata('save_success','success');
-      header('location:'.base_url().'Master/unit');
+      header('location:'.base_url().'Master/gst');
     }
 
-    $data['unit_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'','','','','','','unit_id','ASC','unit');
+    $data['gst_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'','','','','','','gst_id','ASC','gst');
     $this->load->view('Admin/Include/head', $data);
     $this->load->view('Admin/Include/navbar', $data);
-    $this->load->view('Admin/Master/unit', $data);
+    $this->load->view('Admin/Master/gst', $data);
     $this->load->view('Admin/Include/footer', $data);
   }
 
   // Edit/Update GST Slab...
-  public function edit_unit($unit_id){
+  public function edit_gst($gst_id){
     $pharm_user_id = $this->session->userdata('pharm_user_id');
     $pharm_company_id = $this->session->userdata('pharm_company_id');
     $pharm_role_id = $this->session->userdata('pharm_role_id');
     if($pharm_user_id == '' || $pharm_company_id == ''){ header('location:'.base_url().'User'); }
 
-    $this->form_validation->set_rules('unit_name', 'GST Slab Name', 'trim|required');
+    $this->form_validation->set_rules('gst_title', 'GST Slab Name', 'trim|required');
     if ($this->form_validation->run() != FALSE) {
-      $unit_status = $this->input->post('unit_status');
-      if(!isset($unit_status)){ $unit_status = '1'; }
+      $gst_status = $this->input->post('gst_status');
+      if(!isset($gst_status)){ $gst_status = '1'; }
       $update_data = $_POST;
-      $update_data['unit_status'] = $unit_status;
-      $update_data['unit_addedby'] = $pharm_user_id;
-      $this->Master_Model->update_info('unit_id', $unit_id, 'unit', $update_data);
+      $update_data['gst_status'] = $gst_status;
+      $update_data['gst_addedby'] = $pharm_user_id;
+      $this->Master_Model->update_info('gst_id', $gst_id, 'gst', $update_data);
 
       $this->session->set_flashdata('update_success','success');
-      header('location:'.base_url().'Master/unit');
+      header('location:'.base_url().'Master/gst');
     }
 
-    $unit_info = $this->Master_Model->get_info_arr('unit_id',$unit_id,'unit');
-    if(!$unit_info){ header('location:'.base_url().'Master/unit'); }
+    $gst_info = $this->Master_Model->get_info_arr('gst_id',$gst_id,'gst');
+    if(!$gst_info){ header('location:'.base_url().'Master/gst'); }
     $data['update'] = 'update';
-    $data['update_unit'] = 'update';
-    $data['unit_info'] = $unit_info[0];
-    $data['act_link'] = base_url().'Master/edit_unit/'.$unit_id;
+    $data['update_gst'] = 'update';
+    $data['gst_info'] = $gst_info[0];
+    $data['act_link'] = base_url().'Master/edit_gst/'.$gst_id;
 
-    $data['unit_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'','','','','','','unit_id','ASC','unit');
+    $data['gst_list'] = $this->Master_Model->get_list_by_id3($pharm_company_id,'','','','','','','gst_id','ASC','gst');
     $this->load->view('Admin/Include/head', $data);
     $this->load->view('Admin/Include/navbar', $data);
-    $this->load->view('Admin/Master/unit', $data);
+    $this->load->view('Admin/Master/gst', $data);
     $this->load->view('Admin/Include/footer', $data);
   }
 
   //Delete GST Slab...
-  public function delete_unit($unit_id){
+  public function delete_gst($gst_id){
     $pharm_user_id = $this->session->userdata('pharm_user_id');
     $pharm_company_id = $this->session->userdata('pharm_company_id');
-    $pharm_unit_id = $this->session->userdata('pharm_unit_id');
+    $pharm_role_id = $this->session->userdata('pharm_role_id');
     if($pharm_user_id == '' || $pharm_company_id == ''){ header('location:'.base_url().'User'); }
-    $this->Master_Model->delete_info('unit_id', $unit_id, 'unit');
+    $this->Master_Model->delete_info('gst_id', $gst_id, 'gst');
     $this->session->set_flashdata('delete_success','success');
-    header('location:'.base_url().'Master/unit');
+    header('location:'.base_url().'Master/gst');
   }
 
 /********************************* SLider ***********************************/

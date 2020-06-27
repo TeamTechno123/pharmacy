@@ -102,6 +102,12 @@
                 <p>Unit</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a <?php if(isset($update_gst)){ echo 'href="'.$act_link.'"'; } else{ ?> href="<?php echo base_url(); ?>Master/gst" <?php } ?> class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>GST Slab</p>
+              </a>
+            </li>
 
 
             <li class="nav-item">
